@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { profile } from "@/data/profile";
 
 const projectTypes = [
   "SaaS / Web Application",
@@ -13,16 +14,39 @@ const projectTypes = [
 ];
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
 
-    // Wire this up to your API route, Formspree, or email service of choice.
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    const form = e.currentTarget;
+    const payload = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      projectType: (form.elements.namedItem("projectType") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
 
-    setStatus("sent");
+    try {
+      if (profile.contactFormEndpoint) {
+        // Google Apps Script web apps don't return readable CORS responses,
+        // so we fire the request in no-cors mode and treat it as sent once
+        // the request completes without throwing.
+        await fetch(profile.contactFormEndpoint, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload),
+        });
+      } else {
+        // No endpoint configured yet — simulate so the UI still demos correctly.
+        await new Promise((resolve) => setTimeout(resolve, 900));
+      }
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {
@@ -39,6 +63,13 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {status === "error" && (
+        <div className="flex items-center gap-2 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-300">
+          <AlertCircle size={16} />
+          Something went wrong sending your message. Please try again or email me directly.
+        </div>
+      )}
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-2 block font-mono text-xs text-text-muted">

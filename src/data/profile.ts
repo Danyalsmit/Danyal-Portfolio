@@ -4,6 +4,7 @@ export const profile = {
   role: "MERN Stack & AI Application Developer",
   location: "Karachi, Pakistan",
   availability: "Open for freelance & full-time roles",
+  contactFormEndpoint:"https://script.google.com/macros/s/AKfycbz7ajDPlSx5CUVKpS33xJThecs78pzKa0HidMNRDCRgzfM3qZ2m9MfkP2mULLgmFftigA/exec",
   email: "mdanyalkhan2000@gmail.com",
   phone: "+92 316 9367630",
 
@@ -22,6 +23,8 @@ export const profile = {
 
   // Swap this single path to replace your photo everywhere on the site.
   avatarSrc: "/images/danyal-photo.svg",
+
+
 
   // Put your real CV PDF in the public/cv folder with this exact filename
   // (or change the path here to match whatever you name it).
