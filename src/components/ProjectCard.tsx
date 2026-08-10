@@ -35,6 +35,8 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.liveUrl && (
             <a
               href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-text transition-colors hover:text-cyan"
             >
               Live demo <ExternalLink size={14} />
@@ -43,6 +45,8 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.githubUrl && (
             <a
               href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-text-muted transition-colors hover:text-cyan"
             >
               <GithubIcon width={14} height={14} /> Code

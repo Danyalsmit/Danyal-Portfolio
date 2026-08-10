@@ -10,12 +10,12 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-16">
+    <section id="contact" className="relative overflow-hidden py-24 md:py-32">
       <div className="absolute bottom-0 left-1/2 -z-10 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-cyan/10 blur-[140px]" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
-          route="Contact"
+          route="/contact"
           title="Let's Build Something Amazing"
           description="Have a project in mind or want to discuss an opportunity? Drop a message — I typically reply within 24 hours."
         />

@@ -132,7 +132,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-blue px-6 py-3.5 text-sm font-semibold text-void transition-all duration-300 hover:shadow-[0_0_30px_-4px_rgba(34,211,238,0.6)] disabled:opacity-70"
+        className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-blue px-6 py-3.5 text-sm font-semibold text-on-accent transition-all duration-300 hover:shadow-[0_0_30px_-4px_rgba(232,163,61,0.6)] disabled:opacity-70"
       >
         {status === "submitting" ? (
           <>

@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import { profile } from "@/data/profile";
 import Button from "@/components/ui/Button";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +48,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link href="#home" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan to-blue font-display text-sm font-bold text-void shadow-[0_0_20px_-2px_rgba(34,211,238,0.6)]">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan to-blue font-display text-sm font-bold text-on-accent shadow-[0_0_20px_-2px_rgba(232,163,61,0.6)]">
             {profile.name.charAt(0)}
           </span>
           <span className="leading-none">
@@ -55,7 +56,7 @@ export default function Navbar() {
               {profile.name}
               <span className="text-cyan">.</span>
             </span>
-            <span className="block font-mono text-[10px] text-cyan">Full Stack Dev</span>
+            <span className="block font-mono text-[10px] text-text-faint">Full Stack Dev</span>
           </span>
         </Link>
 
@@ -66,7 +67,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`block rounded-full px-4 py-2 font-mono text-[13px] transition-all duration-300 ${
                   active === link.href
-                    ? "bg-gradient-to-r from-cyan/20 to-blue/20 text-cyan shadow-[0_0_0_1px_rgba(34,211,238,0.3)]"
+                    ? "bg-gradient-to-r from-cyan/20 to-blue/20 text-cyan shadow-[0_0_0_1px_rgba(232,163,61,0.3)]"
                     : "text-text-muted hover:text-text"
                 }`}
               >
@@ -76,19 +77,23 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <Button href="#contact" className="!px-5 !py-2.5">
             Let&apos;s talk
           </Button>
         </div>
 
-        <button
-          aria-label="Toggle menu"
-          className="text-text md:hidden"
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            className="text-text"
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {open && (

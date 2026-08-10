@@ -1,10 +1,17 @@
+// Central place to edit your identity, hero copy, and contact details.
+// Change everything here — no need to touch component files.
+
 export const profile = {
   name: "Danyal",
   fullName: "Danyal Khan",
   role: "MERN Stack & AI Application Developer",
   location: "Karachi, Pakistan",
   availability: "Open for freelance & full-time roles",
-  contactFormEndpoint:"https://script.google.com/macros/s/AKfycbz7ajDPlSx5CUVKpS33xJThecs78pzKa0HidMNRDCRgzfM3qZ2m9MfkP2mULLgmFftigA/exec",
+  // Paste your deployed Google Apps Script Web App URL here (see google-sheet-script.js).
+  // Leave empty until you've deployed the script — the form will just simulate submission until then.
+  contactFormEndpoint:
+    "https://script.google.com/macros/s/AKfycbyUXKXctKIDsk3xWN3hmpceq3ITPd2XVgsPwj8YoQ8lCuBSI2JFMfQf1ZL9mriZJEXs/exec",
+
   email: "mdanyalkhan2000@gmail.com",
   phone: "+92 316 9367630",
 
@@ -17,14 +24,12 @@ export const profile = {
   stats: [
     { label: "Years experience", value: "2.5+" },
     { label: "Projects shipped", value: "15+" },
-    { label: "Client satisfaction", value: "100%" },
+    { label: "365 Add-ins built", value: "4" },
     { label: "Stack", value: "MERN" },
   ],
 
   // Swap this single path to replace your photo everywhere on the site.
   avatarSrc: "/images/danyal-photo.svg",
-
-
 
   // Put your real CV PDF in the public/cv folder with this exact filename
   // (or change the path here to match whatever you name it).

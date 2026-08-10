@@ -1,3 +1,12 @@
+// NOT currently rendered on the site — the Testimonials section was removed
+// from src/app/page.tsx until real client quotes are available (fabricated
+// testimonials with fake names are a credibility risk if a client checks).
+//
+// To bring this back once you have real feedback:
+// 1. Replace the entries below with real quotes (get permission from the client first)
+// 2. In src/app/page.tsx, re-import Testimonials and add <Testimonials /> back
+// 3. In src/data/nav.ts, add the Testimonials link back
+
 export interface Testimonial {
   name: string;
   role: string;

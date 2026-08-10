@@ -25,7 +25,7 @@ export default function Button({
 
   const styles =
     variant === "primary"
-      ? "bg-gradient-to-r from-cyan to-blue text-void shadow-[0_0_0_1px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_-4px_rgba(34,211,238,0.6)] hover:-translate-y-0.5"
+      ? "bg-gradient-to-r from-cyan to-blue text-on-accent shadow-[0_0_0_1px_rgba(232,163,61,0.4)] hover:shadow-[0_0_30px_-4px_rgba(232,163,61,0.6)] hover:-translate-y-0.5"
       : "glass text-text hover:border-border-strong hover:-translate-y-0.5";
 
   const linkProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};

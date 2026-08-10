@@ -25,7 +25,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 font-mono text-xs text-cyan shadow-[0_0_25px_-8px_rgba(34,211,238,0.5)]">
+          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 font-mono text-xs text-cyan shadow-[0_0_25px_-8px_rgba(232,163,61,0.5)]">
             <Sparkles size={13} />
             {profile.availability}
           </span>
@@ -119,7 +119,7 @@ export default function Hero() {
                 priority
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <p className="font-mono text-[10px] uppercase tracking-wider text-cyan">
                   Senior Full Stack Developer

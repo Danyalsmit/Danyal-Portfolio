@@ -13,10 +13,10 @@ export default function Projects() {
     active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="relative py-24 md:py-16 bg-black">
+    <section id="projects" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
-          route="Projects"
+          route="/projects"
           title="Featured Projects"
           description="A selection of SaaS platforms, dashboards, and client websites I've shipped."
         />
@@ -28,7 +28,7 @@ export default function Projects() {
               onClick={() => setActive(cat)}
               className={`rounded-full px-4 py-2 font-mono text-xs transition-all duration-300 ${
                 active === cat
-                  ? "bg-gradient-to-r from-cyan to-blue text-void"
+                  ? "bg-gradient-to-r from-cyan to-blue text-on-accent"
                   : "glass text-text-muted hover:text-cyan"
               }`}
             >
