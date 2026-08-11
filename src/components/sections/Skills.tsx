@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlassCard from "@/components/ui/GlassCard";
+import CtaBanner from "@/components/ui/CtaBanner";
 import { skillGroups } from "@/data/skills";
 
 export default function Skills() {
@@ -50,6 +51,12 @@ export default function Skills() {
           ))}
         </div>
       </div>
+
+      <CtaBanner
+        title="Need these skills on your project?"
+        description="If your stack overlaps with what's above, let's talk about what you're building."
+        buttonLabel="Discuss Your Project"
+      />
     </section>
   );
 }

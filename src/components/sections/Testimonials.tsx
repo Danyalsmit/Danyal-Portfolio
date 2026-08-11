@@ -7,7 +7,7 @@ import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 md:py-16 bg-black">
+    <section id="testimonials" className="relative py-24 md:py-16 bg-void">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
           route="Testimonials"

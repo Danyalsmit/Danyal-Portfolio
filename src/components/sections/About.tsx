@@ -31,7 +31,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-16 bg-black">
+    <section id="about" className="relative py-24 md:py-16 bg-void">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
           route="About"

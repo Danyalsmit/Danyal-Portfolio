@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
+import CtaBanner from "@/components/ui/CtaBanner";
 import { projects, projectCategories } from "@/data/projects";
 
 export default function Projects() {
@@ -52,6 +53,12 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      <CtaBanner
+        title="Like what you see?"
+        description="I'm currently taking on new freelance and full-time work — let's build something like this together."
+        buttonLabel="Start Your Project"
+      />
     </section>
   );
 }

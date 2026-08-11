@@ -6,7 +6,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-black">
+    <footer className="border-t border-border bg-void">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
