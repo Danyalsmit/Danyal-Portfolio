@@ -12,12 +12,17 @@ export default function FloatingContact() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Appear after a short delay / small scroll so it doesn't clutter the very first paint.
+    // Appear after a small scroll so it doesn't clutter the very first paint.
+    // Passive + self-removing: once triggered we stop listening entirely, so
+    // this never sits on the scroll thread for the rest of the session.
     const onScroll = () => {
-      if (window.scrollY > 200) setVisible(true);
+      if (window.scrollY > 200) {
+        setVisible(true);
+        window.removeEventListener("scroll", onScroll);
+      }
     };
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

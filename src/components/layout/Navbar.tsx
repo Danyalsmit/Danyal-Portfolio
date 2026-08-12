@@ -5,8 +5,11 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import { profile } from "@/data/profile";
+import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
+
 import ThemeToggle from "@/components/ui/ThemeToggle";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +19,7 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -43,21 +46,14 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "border-b border-border bg-void/70 backdrop-blur-xl" : "bg-transparent"
+        scrolled
+          ? "border-b border-border bg-void/70 backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link href="#home" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan to-blue font-display text-sm font-bold text-on-accent shadow-[0_0_20px_-2px_rgba(232,163,61,0.6)]">
-            {profile.name.charAt(0)}
-          </span>
-          <span className="leading-none">
-            <span className="block font-display text-base font-semibold tracking-tight text-text">
-              {profile.name}
-              <span className="text-cyan">.</span>
-            </span>
-            <span className="block font-mono text-[10px] text-text-faint">Full Stack Dev</span>
-          </span>
+        <Link href="#home">
+          <Logo />
         </Link>
 
         <ul className="glass hidden items-center gap-1 rounded-full px-1.5 py-1.5 md:flex">
@@ -105,7 +101,9 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={`font-mono text-sm transition-colors ${
-                    active === link.href ? "text-cyan" : "text-text-muted hover:text-cyan"
+                    active === link.href
+                      ? "text-cyan"
+                      : "text-text-muted hover:text-cyan"
                   }`}
                 >
                   {link.label}

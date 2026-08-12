@@ -11,6 +11,7 @@ import "./globals.css";
 import { profile, siteMeta } from "@/data/profile";
 import FloatingContact from "@/components/ui/FloatingContact";
 import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMeta.url),
@@ -129,6 +130,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-void text-text antialiased">
+        <SmoothScroll />
         {children}
         <FloatingContact />
         <ExitIntentPopup />
