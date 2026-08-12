@@ -15,11 +15,24 @@ export const profile = {
   email: "mdanyalkhan2000@gmail.com",
   phone: "+92 316 9367630",
 
-  heroHeading: "Hi, I'm Danyal",
+  heroHeading: "I turn your idea into a live product in 30 days",
   heroSubheading:
-    "I design and ship full-stack products — from pixel-tight React interfaces to the APIs and databases underneath.",
+    "Full-stack SaaS platforms, real-time dashboards, and business websites — shipped clean, fast, and ready to scale.",
   heroDescription:
     "2.5+ years building SaaS platforms, real-time apps, and business websites for clients across Microsoft 365, MERN, and modern JS stacks. I care about clean architecture, fast interfaces, and shipping things clients can actually rely on.",
+
+  // Real projects shown in the hero trust bar — every name here must be a project you can actually
+  // show/link to. Never put a company name here that you haven't done verifiable work for.
+  trustedBy: ["Omni Verge Technologies", "BazaarApp", "DME Braces CGM"],
+
+  // This currently scrolls to the contact form — there is no live booking calendar yet, so all
+  // copy referencing this link says "message" / "get in touch", not "book a call". If you set up
+  // a real Calendly link, swap the URL here AND update the CTA copy in Hero.tsx / Contact.tsx / Navbar.tsx
+  // back to "Book a Call" language — until then, keep the copy honest about what actually happens.
+  // Once you paste your real Calendly (or Cal.com) link below, every "Book Free 30-Min Call"
+  // button across the site will open it directly in a new tab instead of scrolling to the form.
+  calendlyUrl: "https://calendly.com/mdanyalkhan2000",
+  contactUrl: "#contact",
 
   stats: [
     { label: "Years experience", value: "2.5+" },

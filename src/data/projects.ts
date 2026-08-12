@@ -34,7 +34,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Node.js", "PostgreSQL", "Prisma ORM"],
     // liveUrl: "#",
     githubUrl: "https://github.com/Danyalsmit/Education-erp-frontend",
-    metric: "3 roles · 6+ managed entities",
+    metric: "One dashboard for admins, teachers & students — no more spreadsheets",
   },
   {
     id: "realtime-chat",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     tags: ["React.js", "Socket.io", "Express.js", "MongoDB"],
     // liveUrl: "#",
     githubUrl: "https://github.com/Danyalsmit/prochat-frontend",
-    metric: "100+ concurrent connections",
+    metric: "Built to handle 100+ people chatting live, without lag",
   },
   {
     id: "ecommerce-store",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     tags: ["React.js", "Redux", "REST APIs", "Vercel"],
     liveUrl: "https://bzarapp.vercel.app/",
     githubUrl: "https://github.com/Danyalsmit/bzarapp",
-    metric: "Optimized Core Web Vitals",
+    metric: "Fast-loading storefront across cars, mobiles, watches & more",
   },
   {
     id: "omniverge-tech",
@@ -69,19 +69,19 @@ export const projects: Project[] = [
     image: "/images/project-omniverge.jpg",
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
     liveUrl: "https://omnivergetec.vercel.app/",
-    metric: "Client project · live in production",
+    metric: "Built to turn visitors into booked consultations",
   },
   {
     id: "dme-braces-cgm",
     title: "DME Braces CGM — Healthcare BPO Landing Page",
     category: "Business Website",
     description:
-      "Conversion-focused landing page for a healthcare BPO outsourcing call center teams for DME, Orthodontics, and CGM campaigns — with service breakdowns, stats, testimonials, FAQ, and a lead-capture consultation form.",
+      "A second project for the Omni Verge Technologies team — a conversion-focused landing page for their healthcare BPO division, outsourcing call center teams for DME, Orthodontics, and CGM campaigns.",
     image: "/images/project-business.jpg",
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
     liveUrl: "https://client-site-beta-lilac.vercel.app/",
     githubUrl: "https://github.com/Danyalsmit/client-site",
-    metric: "Client project · live in production",
+    metric: "Landing page built to turn healthcare leads into consultations",
   },
 ];
 

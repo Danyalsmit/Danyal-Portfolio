@@ -58,7 +58,7 @@ export default function ExitIntentPopup() {
         </button>
 
         <span className="mx-auto inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 font-mono text-xs text-cyan">
-          <span className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_8px_2px_rgba(232,163,61,0.6)]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_8px_2px_rgba(245,158,11,0.6)]" />
           Before you go
         </span>
 
@@ -73,7 +73,7 @@ export default function ExitIntentPopup() {
         <Link
           href="#contact"
           onClick={() => setShow(false)}
-          className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-blue px-6 py-3.5 text-sm font-semibold text-on-accent transition-all duration-300 hover:shadow-[0_0_30px_-4px_rgba(232,163,61,0.6)]"
+          className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-blue px-6 py-3.5 text-sm font-semibold text-on-accent transition-all duration-300 hover:shadow-[0_0_30px_-4px_rgba(245,158,11,0.6)]"
         >
           Get In Touch
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />

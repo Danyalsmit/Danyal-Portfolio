@@ -7,6 +7,9 @@ import { profile } from "@/data/profile";
 import Button from "@/components/ui/Button";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 
+const bookCallHref = profile.calendlyUrl || profile.contactUrl;
+const bookCallIsExternal = Boolean(profile.calendlyUrl);
+
 export default function Hero() {
   return (
     <section
@@ -25,39 +28,42 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 font-mono text-xs text-cyan shadow-[0_0_25px_-8px_rgba(232,163,61,0.5)]">
+          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 font-mono text-xs text-cyan shadow-[0_0_25px_-8px_rgba(245,158,11,0.5)]">
             <Sparkles size={13} />
             {profile.availability}
           </span>
 
-          <h1 className="mt-7 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-            Hi, I&apos;m{" "}
-            <span className="text-gradient">{profile.name}</span>
+          <h1 className="mt-7 font-display text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl md:leading-[1.15] lg:text-7xl">
+            I turn your idea into a{" "}
+            <span className="text-gradient">live product</span> in 30 days
           </h1>
 
           <p className="mt-7 max-w-xl text-lg text-text-muted md:text-xl">
             {profile.heroSubheading}
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-faint md:text-base">
-            {profile.heroDescription}
-          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button href="#projects" icon={<ArrowRight size={16} />} className="!px-7 !py-3.5 !text-base">
-              Explore Projects
-            </Button>
-            <Button href="#contact" variant="secondary" className="!px-7 !py-3.5 !text-base">
-              Get In Touch
-            </Button>
             <Button
-              href={profile.cvUrl}
-              download
-              variant="secondary"
-              icon={<Download size={16} />}
+              href={bookCallHref}
+              external={bookCallIsExternal}
+              icon={<ArrowRight size={16} />}
               className="!px-7 !py-3.5 !text-base"
             >
-              Download CV
+              Book Free 30-Min Call
             </Button>
+            <Button href="#projects" variant="secondary" className="!px-7 !py-3.5 !text-base">
+              View My Work
+            </Button>
+          </div>
+
+          <div className="mt-6 flex items-center gap-4">
+            <a
+              href={profile.cvUrl}
+              download
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-text-faint transition-colors hover:text-cyan"
+            >
+              <Download size={14} /> Download CV
+            </a>
           </div>
 
           <div className="mt-10 flex items-center gap-4">
@@ -90,6 +96,23 @@ export default function Hero() {
             >
               <Briefcase size={18} />
             </a>
+          </div>
+
+          <div className="mt-10 border-t border-border pt-6">
+            <p className="font-mono text-[11px] uppercase tracking-wider text-text-faint">
+              Recently built for
+            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-2">
+              {profile.trustedBy.map((name) => (
+                <a
+                  key={name}
+                  href="#projects"
+                  className="font-display text-base font-semibold text-text-muted/80 transition-colors hover:text-text"
+                >
+                  {name}
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
 

@@ -1,12 +1,3 @@
-// NOT currently rendered on the site — the Testimonials section was removed
-// from src/app/page.tsx until real client quotes are available (fabricated
-// testimonials with fake names are a credibility risk if a client checks).
-//
-// To bring this back once you have real feedback:
-// 1. Replace the entries below with real quotes (get permission from the client first)
-// 2. In src/app/page.tsx, re-import Testimonials and add <Testimonials /> back
-// 3. In src/data/nav.ts, add the Testimonials link back
-
 export interface Testimonial {
   name: string;
   role: string;
@@ -15,29 +6,15 @@ export interface Testimonial {
   rating: number; // 1-5
 }
 
+// Real feedback only. If you add more, keep them genuine — a client can always
+// check, and a fabricated quote is a bigger credibility risk than having none.
 export const testimonials: Testimonial[] = [
   {
-    name: "Sarah Mitchell",
-    role: "Engineering Lead",
-    company: "ioMoVo",
+    name: "Muneeb Ahmed",
+    role: "Client",
+    company: "Omni Verge Technologies",
     quote:
-      "Danyal delivered exceptional Microsoft 365 add-ins and AI agents that transformed our platform's capabilities. His attention to detail and technical precision are genuinely top-notch.",
-    rating: 5,
-  },
-  {
-    name: "Omar Farooq",
-    role: "Founder",
-    company: "Ace BPO Solutions",
-    quote:
-      "We handed Danyal a rough brief and he came back with a site that looked and felt premium — fast, responsive, and exactly on brand. Communication throughout was clear and reliable.",
-    rating: 5,
-  },
-  {
-    name: "Priya Nair",
-    role: "Product Manager",
-    company: "Asra Soft",
-    quote:
-      "A phenomenal MERN stack developer who consistently writes clean code and solves complex backend and frontend challenges with ease. Would work with him again without hesitation.",
+      "Delivered right on time and the site turned out exactly how we wanted. Genuinely happy with the work.",
     rating: 5,
   },
 ];

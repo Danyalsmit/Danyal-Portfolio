@@ -17,9 +17,9 @@ export default function Projects() {
     <section id="projects" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
-          route="/projects"
-          title="Featured Projects"
-          description="A selection of SaaS platforms, dashboards, and client websites I've shipped."
+          route="/work"
+          title="Selected Work"
+          description="Real problems, real clients, real results — not just a tech-stack list."
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">

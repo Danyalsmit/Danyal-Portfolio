@@ -1,12 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Briefcase } from "lucide-react";
+import { Mail, MapPin, Briefcase, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlassCard from "@/components/ui/GlassCard";
+import Button from "@/components/ui/Button";
 import ContactForm from "@/components/ContactForm";
 import { profile } from "@/data/profile";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+
+const bookCallHref = profile.calendlyUrl || profile.contactUrl;
+const bookCallIsExternal = Boolean(profile.calendlyUrl);
 
 export default function Contact() {
   return (
@@ -16,9 +20,39 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
           route="/contact"
-          title="Let's Build Something Amazing"
-          description="Have a project in mind or want to discuss an opportunity? Drop a message — I typically reply within 24 hours."
+          title="Ready to build something?"
+          description="Grab a free 30-minute call to talk through your idea, or send a quick message — either way I'll reply with a clear plan and quote."
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-10 flex flex-col items-center gap-5"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button
+              href={bookCallHref}
+              external={bookCallIsExternal}
+              icon={<ArrowRight size={16} />}
+              className="!px-8 !py-4 !text-base glow-ring"
+            >
+              Book Free 30-Min Call
+            </Button>
+            <Button
+              href={`mailto:${profile.email}`}
+              variant="secondary"
+              icon={<Mail size={16} />}
+              className="!px-8 !py-4 !text-base"
+            >
+              {profile.email}
+            </Button>
+          </div>
+          <p className="font-mono text-xs text-text-faint">
+            Typically reply within 24 hours &middot; Based in {profile.location} &middot; Available worldwide
+          </p>
+        </motion.div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <motion.div
@@ -84,10 +118,12 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
+            id="contact-form"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="scroll-mt-32"
           >
             <GlassCard className="p-8" hover={false}>
               <ContactForm />

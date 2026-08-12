@@ -10,6 +10,8 @@ import Button from "@/components/ui/Button";
 
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
+const bookCallHref = profile.calendlyUrl || profile.contactUrl;
+const bookCallIsExternal = Boolean(profile.calendlyUrl);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,7 +65,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`block rounded-full px-4 py-2 font-mono text-[13px] transition-all duration-300 ${
                   active === link.href
-                    ? "bg-gradient-to-r from-cyan/20 to-blue/20 text-cyan shadow-[0_0_0_1px_rgba(232,163,61,0.3)]"
+                    ? "bg-gradient-to-r from-cyan/20 to-blue/20 text-cyan shadow-[0_0_0_1px_rgba(245,158,11,0.3)]"
                     : "text-text-muted hover:text-text"
                 }`}
               >
@@ -75,8 +77,8 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <Button href="#contact" className="!px-5 !py-2.5">
-            Let&apos;s talk
+          <Button href={bookCallHref} external={bookCallIsExternal} className="!px-5 !py-2.5">
+            Book Free Call
           </Button>
         </div>
 
@@ -111,8 +113,8 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Button href="#contact" className="mt-6 w-full justify-center">
-            Let&apos;s talk
+          <Button href={bookCallHref} external={bookCallIsExternal} className="mt-6 w-full justify-center">
+            Book Free Call
           </Button>
         </div>
       )}

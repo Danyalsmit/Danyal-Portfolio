@@ -8,6 +8,33 @@ export interface SkillGroup {
   items: string[];
 }
 
+export interface SkillLevel {
+  label: string;
+  years: string;
+  percent: number;
+}
+
+// Used by the "Tools I use to ship fast" panel in the Skills section.
+export const toolTags: string[] = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "PostgreSQL",
+  "MongoDB",
+  "Socket.io",
+  "Tailwind CSS",
+  "Prisma",
+  "Vercel",
+];
+
+export const skillLevels: SkillLevel[] = [
+  { label: "Frontend (React / Next.js)", years: "2.5+ yrs", percent: 90 },
+  { label: "Backend (Node / Express)", years: "2+ yrs", percent: 80 },
+  { label: "Databases (SQL / NoSQL)", years: "2+ yrs", percent: 75 },
+  { label: "Real-time (Socket.io)", years: "1.5 yrs", percent: 65 },
+];
+
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend & UI",
