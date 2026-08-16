@@ -32,8 +32,8 @@ export const projects: Project[] = [
       "Full-stack institution management system with role-based dashboards for Admins, Teachers, and Students — attendance, classes, and results in one place.",
     image: "/images/project-erp.png",
     tags: ["Next.js", "Node.js", "PostgreSQL", "Prisma ORM"],
-    // liveUrl: "#",
-    githubUrl: "https://github.com/Danyalsmit/Education-erp-frontend",
+    liveUrl: "https://education-erp-frontend-navy.vercel.app/",
+    // githubUrl: "https://github.com/Danyalsmit/Education-erp-frontend",
     metric: "One dashboard for admins, teachers & students — no more spreadsheets",
   },
   {

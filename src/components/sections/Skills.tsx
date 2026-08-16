@@ -64,8 +64,7 @@ export default function Skills() {
                   <div className="mt-2.5 h-2 w-full overflow-hidden rounded-full bg-panel-2/80">
                     <motion.div
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percent}%` }}
-                      viewport={{ once: true, margin: "-80px" }}
+                      animate={{ width: `${skill.percent}%` }}
                       transition={{ duration: 0.9, delay: 0.15 + i * 0.1, ease: "easeOut" }}
                       className="h-full rounded-full bg-gradient-to-r from-cyan to-blue"
                     />
